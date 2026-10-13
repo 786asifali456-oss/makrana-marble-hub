@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17251e">
+  <meta name="description" content="Discover Makrana marble products, handcrafted carvings, marble slabs, blocks and skilled artisans across India.">
+  <title>Makrana Marble Hub | India's Marble Marketplace</title>
+  <style>
+    :root {
+      --green: #17251e;
+      --green2: #263a2e;
+      --gold: #c6a45b;
+      --cream: #faf8f2;
+      --white: #fff;
+      --text: #252920;
+      --muted: #73766d;
+      --border: #e9e4d8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button, .btn { cursor: pointer; }
+    .topbar {
+      background: var(--green);
+      color: #fff;
+      padding: 8px 5%;
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .5px;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav {
+      max-width: 1240px;
+      margin: auto;
+      padding: 13px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 200px;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 23px;
+      font-family: Georgia, serif;
+    }
+    .brand-name {
+      font-family: Georgia, serif;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--green);
+    }
+    .brand-name small {
+      display: block;
+      font-family: Arial, sans-serif;
+      color: #987a3e;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 13px;
+    }
+    .navlinks a:hover { color: #a17b31; }
+    .nav-cta, .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      border-radius: 4px;
+      padding: 12px 19px;
+      background: var(--gold);
+      color: #17251e;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    .nav-cta:hover, .btn:hover { filter: brightness(.95); }
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(16,29,22,.92), rgba(16,29,22,.68) 52%, rgba(16,29,22,.15)),
+        url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85") center/cover;
+      color: #fff;
+    }
+    .hero-inner {
+      width: 100%;
+      max-width: 1240px;
+      margin: auto;
+      padding: 75px 28px 85px;
+    }
+    .eyebrow {
+      color: #e6c879;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: normal;
+      max-width: 680px;
+      margin: 18px 0;
+    }
+    .hero h1 span { color: #e6c879; }
+    .hero p {
+      color: #e9e8e1;
+      max-width: 560px;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: 4px;
+      color: white;
+      padding: 11px 19px;
+      font-size: 13px;
+    }
+    .trust-strip {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-inner {
+      max-width: 1150px;
+      margin: auto;
+      padding: 21px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      text-align: center;
+    }
+    .trust-inner strong { display: block; font-size: 14px; color: var(--green); }
+    .trust-inner span { font-size: 12px; color: var(--muted); }
+    section { padding: 68px 24px; }
+    .container { max-width: 1160px; margin: auto; }
+    .section-head { margin-bottom: 30px; }
+    .section-head.center { text-align: center; }
+    .section-head h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: normal;
+      color: var(--green);
+      margin: 8px 0 10px;
+    }
+    .section-head p { color: var(--muted); margin: 0; font-size: 14px; }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .category {
+      display: block;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .category:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px #17251e12;
+    }
+    .category img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .category-body { padding: 17px; }
+    .category h3 { color: var(--green); font-size: 16px; margin: 0 0 7px; }
+    .category p { color: var(--muted); font-size: 12px; margin: 0; }
+    .category .arrow { color: #a17b31; display: block; margin-top: 12px; font-size: 12px; font-weight: bold; }
+    .products-section { background: #fff; }
+    .search-row {
+      display: flex;
+      gap: 10px;
+      margin: 25px 0;
+    }
+    .search-row input {
+      flex: 1;
+      min-width: 0;
+      padding: 13px 15px;
+      border: 1px solid #dcd7cb;
+      border-radius: 4px;
+      background: #fff;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .product-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .product-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      background: #eeeae1;
+    }
+    .product-info { padding: 15px; }
+    .product-info h3 { font-size: 15px; margin: 0 0 7px; color: var(--green); }
+    .product-info p { font-size: 12px; color: var(--muted); margin: 5px 0; }
+    .price { color: #98752f; font-size: 15px; font-weight: bold; margin: 10px 0; }
+    .product-info .btn { width: 100%; padding: 10px; }
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 30px 18px;
+      border: 1px dashed #d9cfb8;
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .services { background: #f1eee5; }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service {
+      padding: 25px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .service-icon { font-size: 26px; }
+    .service h3 { font-family: Georgia, serif; font-weight: normal; color: var(--green); font-size: 21px; }
+    .service p { color: var(--muted); font-size: 13px; }
+    .cta-section { padding: 0 24px 68px; background: #f1eee5; }
+    .cta-panel {
+      max-width: 1160px;
+      margin: auto;
+      padding: 42px;
+      background: var(--green);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      color: white;
+    }
+    .cta-panel h2 { font-family: Georgia, serif; font-size: 30px; font-weight: normal; margin: 0 0 8px; }
+    .cta-panel p { color: #d5dbd2; margin: 0; font-size: 14px; }
+    footer { background: #101b15; color: #dfe3dc; padding: 40px 24px 20px; }
+    .footer-inner {
+      max-width: 1160px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+    footer h3 { font-family: Georgia, serif; font-weight: normal; color: #e6c879; }
+    footer p, footer a { font-size: 12px; color: #c5cbc3; }
+    footer a { display: block; margin: 8px 0; }
+    .copyright {
+      max-width: 1160px;
+      margin: 28px auto 0;
+      border-top: 1px solid #354239;
+      padding-top: 16px;
+      color: #aab4aa;
+      font-size: 11px;
+    }
+    .notice { font-size: 11px; color: var(--muted); margin-top: 15px; }
+    @media (max-width: 850px) {
+      .nav { flex-wrap: wrap; padding: 12px 16px; }
+      .brand { min-width: 0; }
+      .navlinks { order: 3; width: 100%; justify-content: center; gap: 17px; flex-wrap: wrap; }
+      .nav-cta { margin-left: auto; }
+      .categories, .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { min-height: 450px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .cta-panel { flex-direction: column; align-items: flex-start; padding: 30px; }
+    }
+    @media (max-width: 480px) {
+      .topbar { font-size: 10px; }
+      .brand-name { font-size: 15px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .nav-cta { padding: 10px; font-size: 11px; }
+      .navlinks { font-size: 12px; gap: 13px; }
+      .hero-inner { padding: 58px 20px; }
+      .hero p { font-size: 14px; }
+      section { padding: 48px 16px; }
+      .categories { gap: 11px; }
+      .category img { height: 120px; }
+      .category-body { padding: 12px; }
+      .category h3 { font-size: 14px; }
+      .product-grid { gap: 11px; }
+      .product-card img { height: 135px; }
+      .product-info { padding: 11px; }
+      .product-info h3 { font-size: 13px; }
+      .search-row { flex-direction: column; }
+      .trust-inner { padding: 16px 8px; gap: 8px; }
+      .trust-inner strong { font-size: 12px; }
+      .trust-inner span { font-size: 10px; }
+      .cta-section { padding: 0 16px 48px; }
+      .cta-panel h2 { font-size: 25px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">INDIA'S MARBLE MARKETPLACE &nbsp; | &nbsp; ROOTED IN MAKRANA, RAJASTHAN</div>
+
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#" aria-label="Makrana Marble Hub home">
+        <span class="brand-mark">M</span>
+        <span class="brand-name">MAKRANA MARBLE HUB<small>CRAFTED IN STONE</small></span>
+      </a>
+      <div class="navlinks">
+        <a href="#categories">Categories</a>
+        <a href="#products">Explore Products</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="#join">Join the Hub ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">The home of Indian marble craftsmanship</div>
+        <h1>Where timeless stone meets <span>extraordinary craft.</span></h1>
+        <p>Discover marble products, skilled artisans, stone suppliers and craftsmanship from Makrana and across India — all in one place.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#products">Explore the Marketplace ↗</a>
+          <a class="btn-outline" href="#join">I'm a Supplier</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="trust-inner">
+        <div><strong>Made for India</strong><span>India-focused marketplace</span></div>
+        <div><strong>Products & Services</strong><span>Stone, craft and expertise</span></div>
+        <div><strong>Makrana Heritage</strong><span>Inspired by generations of craft</span></div>
+      </div>
+    </div>
+
+    <section id="categories">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">Explore the marketplace</div>
+          <h2>Find Your World of Marble</h2>
+          <p>From raw stone to finely finished architectural work.</p>
+        </div>
+        <div class="categories">
+          <a class="category" href="#products" data-search="marble slabs">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80" alt="Elegant stone interior">
+            <div class="category-body"><h3>Marble Slabs</h3><p>Natural stone for interiors and projects.</p><span class="arrow">Explore category →</span></div>
+          </a>
+          <a class="category" href="#products" data-search="marble blocks">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=700&q=80" alt="Stone and marble architecture">
+            <div class="category-body"><h3>Marble Blocks</h3><p>Stone sourcing for workshops and businesses.</p><span class="arrow">Explore category →</span></div>
+          </a>
+          <a class="category" href="#products" data-search="carving handicrafts">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80" alt="Detailed architectural interior">
+            <div class="category-body"><h3>Carving & Handicrafts</h3><p>Decorative pieces and traditional artistry.</p><span class="arrow">Explore category →</span></div>
+          </a>
+          <a class="category" href="#services">
+            <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80" alt="Premium home interior">
+            <div class="category-body"><h3>Projects & Installation</h3><p>Stonework for homes, temples and buildings.</p><span class="arrow">Explore services →</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="products-section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Marketplace listings</div>
+          <h2>Explore Marble Products</h2>
+          <p>Search products listed by suppliers on Makrana Marble Hub.</p>
+        </div>
+        <div class="search-row">
+          <input id="searchInput" type="search" placeholder="Search products, stone types or items..." aria-label="Search products">
+          <button id="searchButton" class="btn" type="button">Search</button>
+        </div>
+        <div id="productGrid" class="product-grid">
+          <div class="empty-state">Marketplace listings will appear here when the product database is connected and contains published products.</div>
+        </div>
+        <p class="notice" id="productNotice">Only products returned by the connected marketplace database will be displayed here.</p>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">More than a marketplace</div>
+          <h2>Craftsmanship. Materials. Services.</h2>
+          <p>Bring buyers, suppliers and skilled stone professionals together.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-icon">✧</div>
+            <h3>Carving & Handicrafts</h3>
+            <p>Discover traditional marble carving, decorative pieces, mandir doors and custom stonework.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">◇</div>
+            <h3>Stone Supply & Fabrication</h3>
+            <p>Connect around marble blocks, slabs, flooring, countertops and custom fabrication needs.</p>
+          </article>
+          <article class="service">
+            <div class="service-icon">⌂</div>
+            <h3>Projects & Installation</h3>
+            <p>Find stonework services for homes, villas, temples, mosques, gurdwaras and commercial projects.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div id="join" class="cta-section">
+      <div class="cta-panel">
+        <div>
+          <div class="eyebrow">Grow with Makrana Marble Hub</div>
+          <h2>Are you a marble supplier or artisan?</h2>
+          <p>We want to bring India's marble community together. Contact us to discuss joining the marketplace.</p>
+        </div>
+        <a class="btn" href="mailto:jawed1409@gmail.com?subject=Makrana%20Marble%20Hub%20Supplier%20Enquiry">Register Your Interest ↗</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <div>
+        <div class="brand">
+          <span class="brand-mark">M</span>
+          <span class="brand-name" style="color:white">MAKRANA MARBLE HUB<small>CRAFTED IN STONE</small></span>
+        </div>
+        <p>Connecting India's marble buyers, suppliers, artisans and stone service professionals.</p>
+        <p>Makrana, Rajasthan, India</p>
+      </div>
+      <div>
+        <h3>Marketplace</h3>
+        <a href="#categories">Browse Categories</a>
+        <a href="#products">Explore Products</a>
+        <a href="#services">Stone Services</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="mailto:jawed1409@gmail.com">Email the Hub</a>
+        <a href="#join">Supplier Enquiries</a>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Makrana Marble Hub. All rights reserved. &nbsp; | &nbsp; India marketplace · Prices in INR when available.</div>
+  </footer>
+
+  <script>
+    // Connect the existing Supabase project in the next setup step.
+    // Never put a Supabase secret/service-role key in website code.
+    const SUPABASE_URL = "https://icnwkvqzaxpyimgnobjj.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE";
+
+    const grid = document.getElementById("productGrid");
+    const searchInput = document.getElementById("searchInput");
+    const notice = document.getElementById("productNotice");
+    let products = [];
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function escapeHTML(value) {
+      return String(value ?? "").replace(/[&<>"']/g, function (ch) {
+        return {
+          "&": "&amp;", "<": "&lt;", ">": "&gt;",
+          '"': "&quot;", "'": "&#39;"
+        }[ch];
+      });
+    }
+
+    function renderProducts(query = "") {
+      const q = query.trim().toLowerCase();
+      const filtered = products.filter(p =>
+        String(p.product_name || "").toLowerCase().includes(q)
+      );
+
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="empty-state">' +
+          (products.length
+            ? "No products match that search. Try another word."
+            : "No product listings are available yet. Published products will appear here when the database is connected.") +
+          '</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const name = escapeHTML(p.product_name || "Marble product");
+        const image = /^https?:\/\//i.test(p.image_url || "")
+          ? escapeHTML(p.image_url)
+          : "";
+        const price = p.price_inr ?? p.price;
+        const priceText = price !== null && price !== undefined && price !== ""
+          ? "₹" + Number(price).toLocaleString("en-IN")
+          : "Price on enquiry";
+
+        const subject = encodeURIComponent("Product enquiry: " + (p.product_name || "Marble product"));
+        const body = encodeURIComponent("Hello Makrana Marble Hub,\nI would like to enquire about: " + (p.product_name || "Marble product") + "\nProduct ID: " + (p.id ?? "Not provided") + "\nPlease share more details.");
+        return '<article class="product-card">' +
+          (image
+            ? '<img src="' + image + '" alt="' + name + '" loading="lazy" onerror="this.style.display=\'none\'">'
+            : '<div style="height:190px;background:#f1eee5;display:grid;place-items:center;color:#9b895f">Marble Product</div>') +
+          '<div class="product-info"><h3>' + name + '</h3>' +
+          '<p>Listed on Makrana Marble Hub</p>' +
+          '<div class="price">' + escapeHTML(priceText) + '</div>' +
+          '<a class="btn" href="mailto:jawed1409@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body) + '">Enquire via Hub</a>' +
+          '</div></article>';
+      }).join("");
+    }
+
+    async function loadProducts() {
+      if (!SUPABASE_PUBLISHABLE_KEY ||
+          SUPABASE_PUBLISHABLE_KEY === "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE") {
+        notice.textContent = "The homepage is ready. Database connection will be enabled in the next setup step.";
+        return;
+      }
+
+      try {
+        const response = await fetch(
+          SUPABASE_URL + "/rest/v1/marble_products?select=id,product_name,price,image_url,price_inr&order=created_at.desc",
+          {
+            headers: {
+              "apikey": SUPABASE_PUBLISHABLE_KEY,
+              "Authorization": "Bearer " + SUPABASE_PUBLISHABLE_KEY
+            }
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Database response " + response.status);
+        }
+
+        products = await response.json();
+        renderProducts(searchInput.value);
+        notice.textContent = "Products shown here come from the marketplace database.";
+      } catch (error) {
+        grid.innerHTML = '<div class="empty-state">Products could not be loaded yet. The database API permissions or connection need to be checked.</div>';
+        notice.textContent = "The homepage is available; product database connection needs configuration.";
+      }
+    }
+
+    document.getElementById("searchButton").addEventListener("click", () => {
+      renderProducts(searchInput.value);
+    });
+
+    searchInput.addEventListener("input", () => {
+      renderProducts(searchInput.value);
+    });
+
+    document.querySelectorAll("[data-search]").forEach(link => {
+      link.addEventListener("click", () => {
+        searchInput.value = link.dataset.search;
+        renderProducts(searchInput.value);
+      });
+    });
+
+    loadProducts();
+  </script>
+</body>
+</html>
